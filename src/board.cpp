@@ -1,6 +1,6 @@
 #include "core_simulation.h"
 #include "mydevices.h"
-#CATHY TEEEEESTER
+//CATHY TEEEEESTER ENGANG TIL
 
 int main(){
   // creation d'une board
