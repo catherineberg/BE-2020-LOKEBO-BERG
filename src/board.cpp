@@ -1,6 +1,6 @@
 #include "core_simulation.h"
 #include "mydevices.h"
-#CATHY TESTER
+//Testtestcathycathy
 
 int main(){
   // creation d'une board
