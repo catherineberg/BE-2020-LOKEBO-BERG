@@ -4,7 +4,7 @@
 #include <string.h>
 
 #include "core_simulation.h"
-
+//test
 // class BoardException
 int BoardException::get(){return num;}
 
