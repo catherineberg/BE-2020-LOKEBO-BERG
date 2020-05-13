@@ -7,6 +7,30 @@
 #include <string.h>
 #include "core_simulation.h"
 
+//%%%%%%%%%%%%%
+extern int luminosite_environnement;
+//%%%%%%%%%%%%%%%%%
+
+class IntelligentDigitalActuatorLED: public Device
+{
+private:
+  int state;
+  int temps;
+public:
+  IntelligentDigitalActuatorLED(int t);
+  virtual void run();
+};
+
+class AnalogSensorLuminosity: public Device
+{
+private:
+  int alea;
+  int val = luminosite_environnement;
+  int temps;
+public:
+  AnalogSensorLuminosity(int d, int t);
+  virtual void run();
+};
 
 // exemple de capteur analogique de temperature, ne pas oublier d'heriter de Device
 class AnalogSensorTemperature: public Device {
@@ -17,7 +41,7 @@ private:
   int val;
   // temps entre 2 prises de valeurs
   int temps;
-  
+
 public:
   //constructeur ne pas oublier d'initialiser la classe mere
   AnalogSensorTemperature(int d,int  t);
@@ -32,7 +56,7 @@ private:
   int state;
   // temps entre 2 affichage de l etat de la led
   int temps;
-  
+
 public:
     // initialisation du temps de rafraichiisement
   DigitalActuatorLED(int t);
@@ -45,7 +69,7 @@ class I2CActuatorScreen : public Device{
 protected:
     // memorise l'affichage de l'ecran
   char buf[I2C_BUFFER_SIZE];
-  
+
 public:
   // constructeur
   I2CActuatorScreen ();
