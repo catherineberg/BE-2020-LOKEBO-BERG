@@ -88,7 +88,7 @@ void IntelligentDigitalActuatorLED::run(){
 
   }
 
-  
+
     sleep(temps);
   }
 }
