@@ -3,5 +3,7 @@
 
 
 class actionneur: public Device{
-
-}
+    int temps;
+    int state; 
+    void virtual run();
+};
