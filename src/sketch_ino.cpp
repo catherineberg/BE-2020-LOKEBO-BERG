@@ -36,7 +36,5 @@ void Board::loop(){
   else
     digitalWrite(0,LOW);
   bascule=1-bascule;
-  
+
 }
-
-
