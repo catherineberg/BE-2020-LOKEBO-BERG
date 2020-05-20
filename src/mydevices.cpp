@@ -78,19 +78,17 @@ void IntelligentDigitalActuatorLED::run(){
       state=*ptrmem;
     if (state==LOW){
       cout << "((((INT eteint))))\n";
-      //*ptr_led-=50;
+      if (old == 1) luminosite_environnement -= 50;
 
     }
 
     else{
     cout << "((((INT allume))))\n";
-    //*ptr_led+=50;
-    //luminosite_environnement += 50;
+    if (old == 0) luminosite_environnement += 50;
+
   }
-  if (state != old){
-    luminosite_environnement +=50;
-    old = 1 - old;
-  }
+
+  
     sleep(temps);
-    }
+  }
 }
