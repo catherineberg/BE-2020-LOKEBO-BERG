@@ -2,7 +2,7 @@
 #include "mydevices.h"
 
 
-class actionneur: public Device{
+class Actionneur: public Device{
     int temps;
     int state; 
     void virtual run();
