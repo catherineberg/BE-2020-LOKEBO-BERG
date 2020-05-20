@@ -1,11 +1,11 @@
 
 #include "LED.h"
 
-DigitalActuatorLED::DigitalActuatorLED(int t):Actionneur(),state(LOW),temps(t){
+LED::LED(int t):Actionneur(),temps(t){
 }
 
-void DigitalActuatorLED::run(){
-  while(1){
+void LED::run(){
+  /*while(1){
     if(ptrmem!=NULL)
       state=*ptrmem;
     if (state==LOW)
@@ -13,5 +13,9 @@ void DigitalActuatorLED::run(){
     else
     cout << "((((allume))))\n";
     sleep(temps);
-    }
+    }*/
+}
+
+void LED::GetColor(){
+  cout << "(("<<color<<"))\n";
 }

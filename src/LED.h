@@ -4,17 +4,20 @@
 #include "core_simulation.h"
 #include "actionneur.h"
 
-class DigitalActuatorLED: public Actionneur {
+class LED: public Actionneur {
 private:
-  // etat de la LED
-  int state;
-  // temps entre 2 affichage de l etat de la led
+  // coleur de la LED
+  string color;
+  // temps entre 2 affichage de l etat de la led - pas utilisé pour le moment. 
+  // peut etre seulement afficher l'etat quand la coleur change?
   int temps;
 
 public:
-    // initialisation du temps de rafraichiisement
-  DigitalActuatorLED(int t);
-    // thread representant l'actionneur et permettant de fonctionner independamment de la board
+  // initialisation du temps de rafraichiisement
+  LED(int t);
+  // function qui sort la couleur 
+  void GetColor();
+  // thread representant l'actionneur et permettant de fonctionner independamment de la board
   virtual void run();
 };
 
