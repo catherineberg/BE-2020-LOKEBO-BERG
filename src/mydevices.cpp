@@ -4,7 +4,11 @@
 using namespace std;
 int luminosite_environnement = 200;
 // classe AnalogSensorLuminosity
+<<<<<<< HEAD
 AnalogSensorLuminosity::AnalogSensorLuminosity(int d, int t = luminosite_environnement):Device(),val(t),temps(d)
+=======
+AnalogSensorLuminosity::AnalogSensorLuminosity(int d, int t = luminosite_environnement):Device(),temps(d)
+>>>>>>> master
 {
   //val = luminosite_environnement;
   alea = 1;
@@ -15,7 +19,11 @@ void AnalogSensorLuminosity::run()
   while(1){
     alea = 1 - alea;
     if(ptrmem!=NULL)
+<<<<<<< HEAD
     *ptrmem=val+alea;
+=======
+    *ptrmem=luminosite_environnement+alea;
+>>>>>>> master
     sleep(temps);
   }
 }
@@ -70,12 +78,20 @@ IntelligentDigitalActuatorLED::IntelligentDigitalActuatorLED(int t):Device(),sta
 }
 
 void IntelligentDigitalActuatorLED::run(){
+<<<<<<< HEAD
   int* ptr_led = &luminosite_environnement;
   while(1){
+=======
+  //int* ptr_led = &luminosite_environnement;
+  int old = 0;
+  while(1){
+
+>>>>>>> master
     if(ptrmem!=NULL)
       state=*ptrmem;
     if (state==LOW){
       cout << "((((INT eteint))))\n";
+<<<<<<< HEAD
       *ptr_led-=50;
     }
     else{
@@ -84,4 +100,19 @@ void IntelligentDigitalActuatorLED::run(){
   }
     sleep(temps);
     }
+=======
+      if (old == 1) luminosite_environnement -= 50;
+
+    }
+
+    else{
+    cout << "((((INT allume))))\n";
+    if (old == 0) luminosite_environnement += 50;
+
+  }
+
+
+    sleep(temps);
+  }
+>>>>>>> master
 }
