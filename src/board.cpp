@@ -3,6 +3,7 @@
 #include "capteur.h"
 #include "luminosity.h"
 #include "button.h"
+#include "porte.h"
 
 
 int main(){
@@ -19,6 +20,10 @@ int main(){
   Button button1(LOW, DELAY);
 
   //%%%%%%
+  // initialisation du materiel
+  //%%%%%%%%%%%%%%%%%%%%%ù
+  
+  //%%%%%%%%%%%%%%%%%%%
 
   // branchement des capteurs actionneurs
   esp8266.pin(1,temperature);
