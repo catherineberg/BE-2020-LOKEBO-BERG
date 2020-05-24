@@ -11,6 +11,7 @@ void Board::setup(){
   //%%%%%%%%%%%%%%%%%
   pinMode(2,INPUT);
   pinMode(3,OUTPUT);
+  pinMode(4,INPUT);
   //%%%%%%%%%%%%%%%%
 }
 
@@ -20,10 +21,12 @@ void Board::loop(){
   int val;
   char buff[100];
   int l;
+  int statebutton1;
+  char buttonbuffer[100];
   static int cpt=0;
   static int bascule=0;
   int i=0;
-  for(i=0;i<10;i++){
+  for(i=0;i<1;i++){
     // lecture sur la pin 1 : capteur de temperature
     val=analogRead(1);
     l = analogRead(2);
@@ -31,6 +34,17 @@ void Board::loop(){
     Serial.println(buff);
     sprintf(buf,"temperature %d",val);
     Serial.println(buf);
+    statebutton1 = digitalRead(4);
+    if(statebutton1 == 0)
+    {
+      sprintf(buttonbuffer, "The button is off");
+    }
+    else
+    {
+      sprintf(buttonbuffer, "The button is on");
+    }
+    Serial.println(buttonbuffer);
+
     if(cpt%5==0){
         // tous les 5 fois on affiche sur l ecran la temperature
       sprintf(buf,"%d",val);

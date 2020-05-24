@@ -13,6 +13,7 @@
 #define MAX_I2C_DEVICES 4
 #define I2C_BUFFER_SIZE 1024
 #define MAX_IO_PIN 6
+#define DEFAULT_STATE 0
 
 using namespace std;
 
@@ -102,7 +103,7 @@ public:
   Terminal Serial;
     // threads representant chaque senseur/actionneur sur le bus I2C
   thread *tabthreadbus[MAX_I2C_DEVICES];
-    
+
 // simulation de la boucle de controle arduino
     void run();
   // accroachage d'un senseur/actionneur à une pin
@@ -126,5 +127,3 @@ public:
 };
 
 #endif
-
-
