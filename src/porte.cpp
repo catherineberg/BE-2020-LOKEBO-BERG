@@ -19,11 +19,11 @@ void Porte::gestionPorte()
 {
   if(getStatusPorte() == OPEN)
   {
-    cout << "---------------- La porte est ouverte" << endl;
+    cout << "-------------------------- La porte est ouverte" << endl;
   }
   else
   {
-    cout << "---------------- La porte est fermee" << endl;
+    cout << "-------------------------- La porte est fermee" << endl;
   }
 }
 
