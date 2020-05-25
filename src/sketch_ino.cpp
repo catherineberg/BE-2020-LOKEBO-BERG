@@ -57,7 +57,7 @@ void Board::loop(){
     cpt++;
     sleep(1);
   }
-// on eteint et on allume la LED
+//on eteint et on allume la LED
   if(bascule){
     digitalWrite(0,HIGH);
     digitalWrite(3,HIGH);

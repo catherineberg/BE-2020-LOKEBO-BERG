@@ -6,7 +6,7 @@ Porte::Porte() : status(CLOSED) {}
 void Porte::open()
 {
   status = OPEN;
-}
+} 
 void Porte::close()
 {
   status = CLOSED;

@@ -3,6 +3,8 @@
 #include "mydevices.h"
 #include "core_simulation.h"
 #include "actionneur.h"
+#include "battery.h"
+#include "button.h"
 
 class LED: public Actionneur {
 private:
@@ -22,7 +24,7 @@ public:
   //fonction qui modifie la coleur
   void SetColor(string c);
   // thread representant l'actionneur et permettant de fonctionner independamment de la board
-  virtual void run();
+  virtual void run(Battery b, Button bu);
 };
 
 #endif
