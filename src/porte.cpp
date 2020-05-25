@@ -3,14 +3,15 @@
 using namespace std;
 
 Porte::Porte() : status(CLOSED) {}
-void Porte::open()
+/*void Porte::open()
 {
   status = OPEN;
 } 
 void Porte::close()
 {
   status = CLOSED;
-}
+}*/
+//setPorte har erstattet void porte::open og porte::closed
 int Porte::getStatusPorte()
 {
   return status;
@@ -25,6 +26,9 @@ void Porte::gestionPorte()
   {
     cout << "-------------------------- La porte est fermee" << endl;
   }
+}
+void setPorte(int s){
+    status=s;
 }
 
 Porte porte;

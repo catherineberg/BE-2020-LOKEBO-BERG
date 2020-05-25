@@ -15,10 +15,11 @@ private:
   int status;
 public:
   Porte();
-  void open();
-  void close();
+  //void open();
+//  void close(); setPorte har erstattet disse to
   void gestionPorte();
   int getStatusPorte();
+  void setPorte(int s);
   //~Porte();
 };
 
