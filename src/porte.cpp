@@ -3,14 +3,14 @@
 using namespace std;
 
 Porte::Porte() : status(CLOSED) {}
-void Porte::open()
+/*void Porte::open()
 {
   status = OPEN;
 }
 void Porte::close()
 {
   status = CLOSED;
-}
+}*/
 int Porte::getStatusPorte()
 {
   return status;

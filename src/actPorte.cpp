@@ -11,9 +11,9 @@ Porte:: Porte () {
 }
 
 void actPorte:: open(){
-    p.setPorte=setPorte(1); //døren er åpen
+    p.setPorte(1); //døren er åpen
 }
 
 void actPorte:: close(){
-    p.setPorte=setPorte(0); //døren er lukket
+    p.setPorte(0); //døren er lukket
 }
