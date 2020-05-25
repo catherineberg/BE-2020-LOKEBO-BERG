@@ -10,6 +10,7 @@ int main(){
   AnalogSensorTemperature temperature(DELAY,TEMP);
   DigitalActuatorLED led1(DELAY);
   I2CActuatorScreen screen;
+   
   
   // branchement des capteurs actionneurs
   esp8266.pin(1,temperature);

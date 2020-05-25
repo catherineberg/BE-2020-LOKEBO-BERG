@@ -2,11 +2,12 @@
 #include <iostream>
 using namespace std;
 
-LED_Rouge::LED_Rouge(int t):Actionneur(),state(LOW),temps(t){
+LED::LED(int t, string c):Actionneur(),state(LOW),temps(t){
+        
 }
 
 //Est-ce que c'est bon ici? Faut peut etre definir le fnct run plutot ? 
-void LED_Rouge::run(){
+void LED::run(){
   
   while(1){
     if(ptrmem!=NULL)
@@ -15,7 +16,8 @@ void LED_Rouge::run(){
      //on fait rien
     }
     else
-     cout << "((LED vert))";
+     cout << "((LED "+coleur+"))"
+       ;
     sleep(temps);
     
    }
