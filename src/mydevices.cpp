@@ -1,9 +1,44 @@
 
 #include "mydevices.h"
+#include <fstream>
 
 using namespace std;
+
+// Button::Button(int s, int t): Device()
+// {
+//   state = s;
+//   temps = t;
+// }
+//
+// int Button::getState()
+// {
+//   return state;
+// }
+// void Button::setState(int s)
+// {
+//   state = s;
+// }
+// void Button::run()
+// {
+//   while(1){
+//     if(ptrmem!=NULL){
+//     if(ifstream("buttontest.txt"))
+//     {
+//       setState(HIGH);
+//     }
+//     else
+//     {
+//       setState(LOW);
+//     }
+//     *ptrmem = getState();
+//   }
+//     sleep(temps);
+//   }
+// }
+
 int luminosite_environnement = 200;
 // classe AnalogSensorLuminosity
+
 AnalogSensorLuminosity::AnalogSensorLuminosity(int d, int t = luminosite_environnement):Device(),temps(d)
 {
   //val = luminosite_environnement;
@@ -15,6 +50,7 @@ void AnalogSensorLuminosity::run()
   while(1){
     alea = 1 - alea;
     if(ptrmem!=NULL)
+
     *ptrmem=luminosite_environnement+alea;
     sleep(temps);
   }
@@ -70,6 +106,7 @@ IntelligentDigitalActuatorLED::IntelligentDigitalActuatorLED(int t):Device(),sta
 }
 
 void IntelligentDigitalActuatorLED::run(){
+
   //int* ptr_led = &luminosite_environnement;
   int old = 0;
   while(1){
@@ -78,13 +115,15 @@ void IntelligentDigitalActuatorLED::run(){
       state=*ptrmem;
     if (state==LOW){
       cout << "((((INT eteint))))\n";
-      if (old == 1) luminosite_environnement -= 50;
+      if (old == 1){ luminosite_environnement -= 50;
+        old = state;}
 
     }
 
     else{
     cout << "((((INT allume))))\n";
-    if (old == 0) luminosite_environnement += 50;
+    if (old == 0) { luminosite_environnement += 50;
+      old = state;}
 
   }
 

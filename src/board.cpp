@@ -1,5 +1,9 @@
 #include "core_simulation.h"
 #include "mydevices.h"
+#include "capteur.h"
+#include "luminosity.h"
+#include "button.h"
+#include "porte.h"
 
 
 int main(){
@@ -13,8 +17,13 @@ int main(){
   //%%%%%%%
   AnalogSensorLuminosity luminosite(DELAY, luminosite_environnement);
   IntelligentDigitalActuatorLED led2(DELAY);
+  Button button1(LOW, DELAY);
 
   //%%%%%%
+  // initialisation du materiel
+  //%%%%%%%%%%%%%%%%%%%%%ù
+
+  //%%%%%%%%%%%%%%%%%%%
 
   // branchement des capteurs actionneurs
   esp8266.pin(1,temperature);
@@ -23,6 +32,7 @@ int main(){
   //%%%%%%%%%%%%%%%%%
   esp8266.pin(2,luminosite);
   esp8266.pin(3,led2);
+  esp8266.pin(4,button1);
   //%%%%%%%%%%%%%%%%%%%
   // allumage de la carte
   esp8266.run();

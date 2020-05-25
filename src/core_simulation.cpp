@@ -7,10 +7,6 @@
 
 // class BoardException
 int BoardException::get(){return num;}
-
-//this is a test from Hermund
-//this is a test from Njord1
-
 string BoardException::text(){
   string s;
   switch(num){
@@ -131,7 +127,7 @@ void Board::run(){
 void Board::pin(int p, Device& s){
   s.setPinMem(&io[p], &stateio[p]);
   tabthreadpin[p]=new thread(&Device::run,&s);
-
+  
 }
 
 void Board::pinMode(int p,enum typeio t){
@@ -176,3 +172,4 @@ void Board::i2c(int addr,Device& dev){
   dev.setI2CAddr(addr,&bus);
   tabthreadbus[addr]=new thread(&Device::run,&dev);
 }
+

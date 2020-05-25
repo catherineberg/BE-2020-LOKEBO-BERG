@@ -1,5 +1,5 @@
-#include "capteurs.h"
-#include "mydevices.h"
+#include "capteur.h"
+//#include "mydevices.h"
 
 using namespace std;
 

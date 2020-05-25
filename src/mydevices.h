@@ -9,7 +9,21 @@
 
 //%%%%%%%%%%%%%
 extern int luminosite_environnement;
+//variable externe qui prend la coleur du LED (necessaire? ou plutot get/set coleur?):
+extern int coleur_led;
 //%%%%%%%%%%%%%%%%%
+
+// class Button: public Device {
+// private:
+//   int state;
+//   int temps;
+// public:
+//   Button(int s, int t);
+//   int getState();
+//   void setState(int s);
+//   virtual void run();
+// //  void gestionButton();
+// };
 
 class IntelligentDigitalActuatorLED: public Device
 {
