@@ -1,9 +1,9 @@
-
 #include "LED.h"
 
 LED::LED(int t):Actionneur(),temps(t){
 }
 
+//Est-ce que c'est bon ici? Faut peut etre definir le fnct run plutot ? 
 LED::LED(int t):Actionneur(),state(LOW),temps(t){
   
   //while loop qui regarde l'etat de CapteurPresence (si la voiture n'est pas la - LED OFF)
@@ -20,6 +20,9 @@ LED::LED(int t):Actionneur(),state(LOW),temps(t){
    }
 }
 
-void LED::GetColor(){
-  cout << "(("<<color<<"))\n";
+string LED::GetColor(){
+  return color;
+}
+void LED::SetColor(string c){
+  color=c;
 }

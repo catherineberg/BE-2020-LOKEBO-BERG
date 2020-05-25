@@ -6,6 +6,8 @@
 
 class LED: public Actionneur {
 private:
+  //l'etat de la LED
+  int state;
   // coleur de la LED
   string color;
   // temps entre 2 affichage de l etat de la led - pas utilisé pour le moment. 
@@ -16,7 +18,9 @@ public:
   // initialisation du temps de rafraichiisement
   LED(int t);
   // function qui sort la couleur 
-  void GetColor();
+  string GetColor();
+  //fonction qui modifie la coleur
+  void SetColor(string c);
   // thread representant l'actionneur et permettant de fonctionner independamment de la board
   virtual void run();
 };

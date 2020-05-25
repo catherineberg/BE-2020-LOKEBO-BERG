@@ -1,7 +1,11 @@
 #include "core_simulation.h"
 #include "mydevices.h"
+<<<<<<< HEAD
 #include "actionneur.h"
 #include "LED.h"
+=======
+//CATHY TEEEEESTER ENGANG TIL
+>>>>>>> my_new_branch
 
 int main(){
   // creation d'une board
