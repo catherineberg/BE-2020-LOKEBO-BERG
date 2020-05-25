@@ -31,17 +31,5 @@ void setPorte(int s){ //Jeg kan bare push dine filer, ikke mine.... -Cathy
     status=s;
 }
 
-int testerbare1(){
-    return 1;
-}
-int testerbare2(){
-     return 1;
-}
-int testerbare3(){
-     return 1;
-}
-int testerbare4(){
-     return 1;
-}
 
 Porte porte;

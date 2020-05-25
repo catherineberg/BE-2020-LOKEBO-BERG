@@ -21,10 +21,6 @@ public:
   int getStatusPorte();
   void setPorte(int s);
   //~Porte();
-    int testerbare1();
-    int testerbare2();
-    int testerbare3();
-    int testerbare4();
    
 };
 
