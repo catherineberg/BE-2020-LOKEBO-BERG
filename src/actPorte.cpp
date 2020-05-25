@@ -11,11 +11,9 @@ using namespace std;
 
 void actPorte:: open(Porte p){
     p.setPorte(1); //Opens door
-    cout << "funker dette" << endl;
 }
 void actPorte:: close(Porte p){
     p.setPorte(0); //Closes door
-    cout << "funker dette" << endl;
 }
 
 void actPorte::run(){
