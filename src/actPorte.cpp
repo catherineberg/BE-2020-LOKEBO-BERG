@@ -7,14 +7,15 @@
 //Servomoteur
 #include "actPorte.hpp" //Hva er forskjellen på .hpp og .h??
 #include "porte.h" //Usikker på hvilken jeg skal inkludere
-
+using namespace std;
 
 void actPorte:: open(Porte p){
     p.setPorte(1); //Opens door
-    
+    cout << "funker dette" << endl;
 }
 void actPorte:: close(Porte p){
     p.setPorte(0); //Closes door
+    cout << "funker dette" << endl;
 }
 
 void actPorte::run(){
@@ -27,6 +28,7 @@ void actPorte::run(){
         p.setPorte(1); //If state er high, så åpner vi døren
     sleep(temps);
     }
+    
 }
 
 
