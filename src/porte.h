@@ -22,6 +22,11 @@ public:
   void setPorte(int s);
   //~Porte();
     int testerbare();
+    int testerbare1();
+    int testerbare2();
+    int testerbare3();
+    int testerbare4();
+    int testerbare5();
 };
 
 extern Porte porte;
