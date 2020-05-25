@@ -22,7 +22,7 @@ int main(){
   //%%%%%%
   // initialisation du materiel
   //%%%%%%%%%%%%%%%%%%%%%ù
-  
+
   //%%%%%%%%%%%%%%%%%%%
 
   // branchement des capteurs actionneurs
