@@ -7,4 +7,10 @@ class Porte: public Actionneur(){
 //    void virtual run();
 };
 
+class actPorte{
+public:
+    void open(Porte p);
+    void close(Porte p);
+}
+
 #endif

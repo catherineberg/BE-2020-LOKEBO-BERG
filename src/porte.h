@@ -15,11 +15,12 @@ private:
   int status;
 public:
   Porte();
-  void open();
-  void close();
+//  void open();
+//  void close();
   void gestionPorte();
   int getStatusPorte();
   //~Porte();
+    void setPorte(int s);
 };
 
 extern Porte porte;

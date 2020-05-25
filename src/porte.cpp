@@ -27,4 +27,8 @@ void Porte::gestionPorte()
   }
 }
 
+void Porte::setPorte(int s){
+    status =s;
+}
+
 Porte porte;
