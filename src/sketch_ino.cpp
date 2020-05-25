@@ -61,12 +61,10 @@ void Board::loop(){
   if(bascule){
     digitalWrite(0,HIGH);
     digitalWrite(3,HIGH);
-    porte.open();
   }
   else {
     digitalWrite(0,LOW);
     digitalWrite(3,LOW);
-    porte.close();
   }
   bascule=1-bascule;
 
