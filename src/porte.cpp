@@ -30,5 +30,9 @@ void Porte::gestionPorte()
 void setPorte(int s){
     status=s;
 }
+int Porte:testerbare(){
+    return 1;
+}
+
 
 Porte porte;

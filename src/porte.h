@@ -21,6 +21,7 @@ public:
   int getStatusPorte();
   void setPorte(int s);
   //~Porte();
+    int testerbare();
 };
 
 extern Porte porte;
