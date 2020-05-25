@@ -4,6 +4,7 @@
 #include "luminosity.h"
 #include "button.h"
 #include "porte.h"
+#include "led.h"
 
 
 int main(){
@@ -13,11 +14,15 @@ int main(){
   AnalogSensorTemperature temperature(DELAY,TEMP);
   DigitalActuatorLED led1(DELAY);
   I2CActuatorScreen screen;
+  LED ledv(DELAY, "vert");
+  LED ledo(DELAY, "orange");
+  LED ledr(DELAY, "rouge");
 
   //%%%%%%%
   AnalogSensorLuminosity luminosite(DELAY, luminosite_environnement);
   IntelligentDigitalActuatorLED led2(DELAY);
   Button button1(LOW, DELAY);
+
 
   //%%%%%%
   // initialisation du materiel
@@ -33,6 +38,10 @@ int main(){
   esp8266.pin(2,luminosite);
   esp8266.pin(3,led2);
   esp8266.pin(4,button1);
+
+  esp8266.pin(6,ledv);
+  esp8266.pin(7,ledr);
+  esp8266.pin(8,ledo);
   //%%%%%%%%%%%%%%%%%%%
   // allumage de la carte
   esp8266.run();

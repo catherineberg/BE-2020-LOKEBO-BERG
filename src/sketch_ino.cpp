@@ -13,6 +13,10 @@ void Board::setup(){
   pinMode(2,INPUT);
   pinMode(3,OUTPUT);
   pinMode(4,INPUT);
+
+  pinMode(6,OUTPUT);
+  pinMode(7,OUTPUT);
+  pinMode(8,OUTPUT);
   //%%%%%%%%%%%%%%%%
 }
 
