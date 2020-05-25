@@ -1,7 +1,7 @@
 #include "core_simulation.h"
 #include "mydevices.h"
 #include "capteur.h"
-#include "luminosity.h"
+#include "IRsensor.h"
 #include "button.h"
 #include "porte.h"
 

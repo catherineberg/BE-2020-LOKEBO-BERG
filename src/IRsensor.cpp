@@ -3,8 +3,10 @@
 
 using namespace std;
 
-LuminositySensor::LuminositySensor() : Capteur(int v, int t)
-{}
+IRsensor::IRsensor() : Capteur(int v, int t)
+{
+  alea = 1;
+}
 
-  void LuminositySensor::run() : Capteur::run() {}
-  
+  void IRsensor::run(): Capteur();
+{}

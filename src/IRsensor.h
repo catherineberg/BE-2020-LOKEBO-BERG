@@ -1,5 +1,5 @@
-#ifndef LUMINOSITY_H
-#define LUMINOSITY_H
+#ifndef IRSENSOR_H
+#define IRSENSOR_H
 
 #include <iostream>
 #include <thread>
@@ -10,18 +10,11 @@
 #include "capteur.h"
 
 // Classe du capteur de présence devant la porte pour détecter une voiture
-class LuminositySensor: public Capteur
+class IRsensor: public Capteur
 {
-private:
-  // fait osciller la valeur du capteur de 1
-  int alea;
-  // valeur de la luminosite mesuree
-  int val;
-  // temps entre 2 prises de valeurs
-  int temps;
 public:
   // constructeur
-  LuminositySensor(int v, int t);
+  IRsensor(int v, int t);
   // thread representant le capteur et permettant de fonctionner independamment de la board
   virtual void run();
 };
