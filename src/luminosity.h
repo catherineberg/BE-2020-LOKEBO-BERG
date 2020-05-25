@@ -1,14 +1,16 @@
-#ifndef CAPTEUR_H
-#define CAPTEUR_H
+#ifndef LUMINOSITY_H
+#define LUMINOSITY_H
 
 #include <iostream>
 #include <thread>
 #include <unistd.h>
 #include <string.h>
 #include "core_simulation.h"
+#include "mydevices.h"
+#include "capteur.h"
 
-// Classe mere d'un capteur
-class Capteur: public Device
+// Classe du capteur de présence devant la porte pour détecter une voiture
+class LuminositySensor: public Capteur
 {
 private:
   // fait osciller la valeur du capteur de 1
@@ -19,10 +21,9 @@ private:
   int temps;
 public:
   // constructeur
-  Capteur(int v, int t);
+  LuminositySensor(int v, int t);
   // thread representant le capteur et permettant de fonctionner independamment de la board
   virtual void run();
 };
-
 
 #endif

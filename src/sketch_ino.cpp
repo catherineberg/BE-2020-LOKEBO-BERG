@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include "core_simulation.h"
+#include "porte.h"
 
 // la fonction d'initialisation d'arduino
 void Board::setup(){
@@ -11,6 +12,7 @@ void Board::setup(){
   //%%%%%%%%%%%%%%%%%
   pinMode(2,INPUT);
   pinMode(3,OUTPUT);
+  pinMode(4,INPUT);
   //%%%%%%%%%%%%%%%%
 }
 
@@ -20,17 +22,31 @@ void Board::loop(){
   int val;
   char buff[100];
   int l;
+  int statebutton1;
+  char buttonbuffer[100];
   static int cpt=0;
   static int bascule=0;
   int i=0;
-  for(i=0;i<10;i++){
+  for(i=0;i<1;i++){
     // lecture sur la pin 1 : capteur de temperature
     val=analogRead(1);
     l = analogRead(2);
+    porte.gestionPorte();
     sprintf(buff, "luminosite %d", l);
     Serial.println(buff);
     sprintf(buf,"temperature %d",val);
     Serial.println(buf);
+    statebutton1 = digitalRead(4);
+    if(statebutton1 == 0)
+    {
+      sprintf(buttonbuffer, "The button is off");
+    }
+    else
+    {
+      sprintf(buttonbuffer, "The button is on");
+    }
+    Serial.println(buttonbuffer);
+
     if(cpt%5==0){
         // tous les 5 fois on affiche sur l ecran la temperature
       sprintf(buf,"%d",val);
@@ -45,10 +61,12 @@ void Board::loop(){
   if(bascule){
     digitalWrite(0,HIGH);
     digitalWrite(3,HIGH);
+    porte.open();
   }
   else {
     digitalWrite(0,LOW);
     digitalWrite(3,LOW);
+    porte.close();
   }
   bascule=1-bascule;
 
