@@ -56,12 +56,12 @@ void Board::loop(){
     if(statebutton1 == 0)
     {
       sprintf(buttonbuffer, "The button is off");
-      digitalWrite(8,LOW);
+      digitalWrite(11,LOW);
     }
     else
     {
       sprintf(buttonbuffer, "The button is on");
-      digitalWrite(8,HIGH);
+      digitalWrite(11,HIGH);
 
     }
     Serial.println(buttonbuffer);
