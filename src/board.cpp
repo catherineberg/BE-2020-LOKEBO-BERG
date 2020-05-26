@@ -4,11 +4,9 @@
 #include "luminosity.h"
 #include "button.h"
 #include "porte.h"
-<<<<<<< HEAD
-#include "actPorte.hpp"
-=======
+#include "chargeur.h"
+#include "battery.h"
 #include "actPorte.h"
->>>>>>> actPorte
 
 
 int main(){
@@ -19,12 +17,15 @@ int main(){
   DigitalActuatorLED led1(DELAY);
   I2CActuatorScreen screen;
   actPorte actporte1;
+  
+
 
   //%%%%%%%
   AnalogSensorLuminosity luminosite(DELAY, luminosite_environnement);
   IntelligentDigitalActuatorLED led2(DELAY);
   Button button1(LOW, DELAY);
-  esp8266.pin(5,actporte1); //Kobler til servomotoren til en pin 
+
+  esp8266.pin(5,actporte1); //Kobler til servomotoren til en pin
 
   //%%%%%%
   // initialisation du materiel

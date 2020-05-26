@@ -10,6 +10,10 @@ Battery::Battery(int v, int t) : Capteur(int v, int t) {
 int Battery::checkBattery() {
   return val;
 }
+void Battery::setBattery(int b)
+{
+  val = b;
+}
 
 void Battery::run()
  {

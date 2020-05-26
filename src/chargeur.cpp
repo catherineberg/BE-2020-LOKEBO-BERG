@@ -1,18 +1,32 @@
 #include "chargeur.h"
 
 
-Chargeur::Chargeur(int t):Actionneur(),state(LOW),temps(t){
-  
-  //while loop qui regarde l'etat de CapteurPresence (si la voiture n'est pas la - OFF)
-  //et CheckBatterie (si la batterie n'est pas à 100% - ON, à 100% OFF)
-  while(1){
-    /*if(ptrmem!=NULL)
-      state=*ptrmem;
-    if (state==LOW)
-     ;
-    else
-     ;
-    sleep(temps);
-    */
-   }
+Chargeur::Chargeur(int t, Battery b):Device(),state(LOW) ,temps(t), batt(b)
+{
+
+}
+
+void Chargeur::chargeBatt()
+{
+  batt.setBattery(b.checkBattery()+10);
+}
+
+void Chargeur::run()
+{
+  while(1)
+  {
+    if(ptrmem!=NULL)
+    state=*ptrmem;
+    if(state == HIGH)
+    {
+      if(batt.checkBattery() > 90)
+      {
+        batt.setBattery(100);
+      }
+      else
+      {
+        chargeBatt();
+      }
+    }
+  }
 }
