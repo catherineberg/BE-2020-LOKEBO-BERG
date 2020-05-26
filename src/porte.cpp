@@ -27,7 +27,12 @@ void Porte::gestionPorte()
     cout << "-------------------------- La porte est fermee" << endl;
   }
 }
+<<<<<<< HEAD
 void setPorte(int s){ //Jeg kan bare push dine filer, ikke mine.... -Cathy 
+=======
+/*
+void setPorte(int s){
+>>>>>>> njord_branch2
     status=s;
 }
 
@@ -37,3 +42,4 @@ void Porte::setPorte(int s){
 }
 
 Porte porte;
+*/

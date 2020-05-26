@@ -1,6 +1,7 @@
 #include "chargeur.h"
 
 
+<<<<<<< HEAD
 Chargeur::Chargeur(int t, Battery b):Device(),state(LOW) ,temps(t), batt(b)
 {
 
@@ -30,3 +31,21 @@ void Chargeur::run()
     }
   }
 }
+=======
+Chargeur::Chargeur(int t):Device(),state(LOW),temps(t){}
+
+void Chargeur::run(){
+  //while loop qui regarde l'etat de Bouton?? 
+  //et CheckBatterie (si la batterie n'est pas à 100% - ON, à 100% OFF)
+  while(1){
+    /*if(ptrmem!=NULL)
+      state=*ptrmem;
+    if (state==LOW)
+     ;
+    else
+     ;
+    sleep(temps);
+    */
+   }
+}
+>>>>>>> njord_branch2

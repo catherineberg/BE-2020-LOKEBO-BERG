@@ -13,6 +13,10 @@ void Board::setup(){
   pinMode(2,INPUT);
   pinMode(3,OUTPUT);
   pinMode(4,INPUT);
+
+  pinMode(6,OUTPUT);
+  pinMode(7,OUTPUT);
+  pinMode(8,OUTPUT);
   //%%%%%%%%%%%%%%%%
 }
 
@@ -31,7 +35,7 @@ void Board::loop(){
     // lecture sur la pin 1 : capteur de temperature
     val=analogRead(1);
     l = analogRead(2);
-    porte.gestionPorte();
+    
     sprintf(buff, "luminosite %d", l);
     Serial.println(buff);
     sprintf(buf,"temperature %d",val);
@@ -61,12 +65,10 @@ void Board::loop(){
   if(bascule){
     digitalWrite(0,HIGH);
     digitalWrite(3,HIGH);
-    porte.open();
   }
   else {
     digitalWrite(0,LOW);
     digitalWrite(3,LOW);
-    porte.close();
   }
   bascule=1-bascule;
 
