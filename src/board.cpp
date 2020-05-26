@@ -1,12 +1,11 @@
 #include "core_simulation.h"
 #include "mydevices.h"
 #include "capteur.h"
-#include "luminosity.h"
+#include "IRsensor.h"
 #include "button.h"
 #include "porte.h"
-#include "chargeur.h"
 #include "battery.h"
-#include "actPorte.h"
+#include "chargeur.h"
 
 
 int main(){
@@ -16,16 +15,14 @@ int main(){
   AnalogSensorTemperature temperature(DELAY,TEMP);
   DigitalActuatorLED led1(DELAY);
   I2CActuatorScreen screen;
-  actPorte actporte1;
-  
-
 
   //%%%%%%%
   AnalogSensorLuminosity luminosite(DELAY, luminosite_environnement);
   IntelligentDigitalActuatorLED led2(DELAY);
   Button button1(LOW, DELAY);
-
-  esp8266.pin(5,actporte1); //Kobler til servomotoren til en pin
+  IRsensor sensor1(DELAY,infraval);
+  Battery battery(DELAY,50);
+  Chargeur chargeur(DELAY, battery);
 
   //%%%%%%
   // initialisation du materiel
@@ -41,6 +38,9 @@ int main(){
   esp8266.pin(2,luminosite);
   esp8266.pin(3,led2);
   esp8266.pin(4,button1);
+  esp8266.pin(6,sensor1);
+  esp8266.pin(7,battery);
+  esp8266.pin(8,chargeur);
   //%%%%%%%%%%%%%%%%%%%
   // allumage de la carte
   esp8266.run();

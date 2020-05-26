@@ -5,7 +5,7 @@
 #include "actionneur.h"
 #include "battery.h"
 
-class Chargeur: Device {
+class Chargeur: public Device {
 private:
   // si le chargeur est ON (HIGH) ou OFF (LOW)
   int state;
@@ -17,10 +17,12 @@ private:
   Battery batt;
 public:
   // initialisation du temps de rafraichiisement
-  Chargeur(Battery b);
+  Chargeur(int t, Battery b);
   void chargeBatt();
   // thread representant l'actionneur et permettant de fonctionner independamment de la board
   virtual void run();
 };
+
+
 
 #endif

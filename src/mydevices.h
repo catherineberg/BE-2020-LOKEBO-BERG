@@ -9,8 +9,7 @@
 
 //%%%%%%%%%%%%%
 extern int luminosite_environnement;
-//variable externe qui prend la coleur du LED (necessaire? ou plutot get/set coleur?):
-extern int coleur_led;
+extern int infraval;
 //%%%%%%%%%%%%%%%%%
 
 // class Button: public Device {

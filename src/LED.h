@@ -10,14 +10,14 @@ private:
   int state;
   // coleur de la LED
   string color;
-  // temps entre 2 affichage de l etat de la led - pas utilisé pour le moment. 
+  // temps entre 2 affichage de l etat de la led - pas utilisé pour le moment.
   // peut etre seulement afficher l'etat quand la coleur change?
   int temps;
 
 public:
   // initialisation du temps de rafraichiisement
   LED(int t);
-  // function qui sort la couleur 
+  // function qui sort la couleur
   string GetColor();
   //fonction qui modifie la coleur
   void SetColor(string c);
