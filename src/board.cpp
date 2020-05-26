@@ -18,6 +18,7 @@ int main(){
   AnalogSensorLuminosity luminosite(DELAY, luminosite_environnement);
   IntelligentDigitalActuatorLED led2(DELAY);
   Button button1(LOW, DELAY);
+  IRsensor sensor1(DELAY,infraval);
 
   //%%%%%%
   // initialisation du materiel
@@ -33,6 +34,7 @@ int main(){
   esp8266.pin(2,luminosite);
   esp8266.pin(3,led2);
   esp8266.pin(4,button1);
+  esp8266.pin(6,sensor1);
   //%%%%%%%%%%%%%%%%%%%
   // allumage de la carte
   esp8266.run();

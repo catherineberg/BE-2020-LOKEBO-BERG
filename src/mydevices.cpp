@@ -37,6 +37,7 @@ using namespace std;
 // }
 
 int luminosite_environnement = 200;
+int infraval = 50;
 // classe AnalogSensorLuminosity
 
 AnalogSensorLuminosity::AnalogSensorLuminosity(int d, int t = luminosite_environnement):Device(),temps(d)

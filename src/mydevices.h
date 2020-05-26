@@ -9,6 +9,7 @@
 
 //%%%%%%%%%%%%%
 extern int luminosite_environnement;
+extern int infraval;
 //%%%%%%%%%%%%%%%%%
 
 // class Button: public Device {

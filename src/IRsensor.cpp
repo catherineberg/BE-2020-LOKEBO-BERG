@@ -1,12 +1,20 @@
 #include "capteur.h"
 #include "mydevices.h"
+#include "IRsensor.h"
 
 using namespace std;
 
-IRsensor::IRsensor() : Capteur(int v, int t)
+IRsensor::IRsensor(int t, int v) : Device(), temps(t), val(v)
 {
-  alea = 1;
 }
 
-  void IRsensor::run(): Capteur();
-{}
+  void IRsensor::run()
+{
+  while(1)
+  {
+    if(ptrmem!=NULL)
+    *ptrmem=val;
+    //cout << "IRsensor : " << val+alea << endl;
+    sleep(temps);
+  }
+}

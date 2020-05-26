@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Capteur::Capteur(int v, int t): Device(), temps(t), val(v)
+Capteur::Capteur(int t, int v): Device(),  val(v),temps(t)
 {
   alea = 1;
 }

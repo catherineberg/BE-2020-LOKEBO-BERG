@@ -13,6 +13,7 @@ void Board::setup(){
   pinMode(2,INPUT);
   pinMode(3,OUTPUT);
   pinMode(4,INPUT);
+  pinMode(6,INPUT);
   //%%%%%%%%%%%%%%%%
 }
 
@@ -22,16 +23,21 @@ void Board::loop(){
   int val;
   char buff[100];
   int l;
+  int irval;
   int statebutton1;
   char buttonbuffer[100];
-  static int cpt=0;
+  char irbuffer[100];
+  //static int cpt=0;
   static int bascule=0;
   int i=0;
   for(i=0;i<1;i++){
     // lecture sur la pin 1 : capteur de temperature
     val=analogRead(1);
     l = analogRead(2);
+    irval = digitalRead(6);
     porte.gestionPorte();
+    sprintf(irbuffer, "IRvaleur : %d", irval);
+    Serial.println(irbuffer);
     sprintf(buff, "luminosite %d", l);
     Serial.println(buff);
     sprintf(buf,"temperature %d",val);
@@ -47,14 +53,16 @@ void Board::loop(){
     }
     Serial.println(buttonbuffer);
 
-    if(cpt%5==0){
-        // tous les 5 fois on affiche sur l ecran la temperature
-      sprintf(buf,"%d",val);
-      sprintf(buff, "%d", l);
-      bus.write(2,buff,100);
-      bus.write(1,buf,100);
-    }
-    cpt++;
+    // if(cpt%5==0){
+    //     // tous les 5 fois on affiche sur l ecran la temperature
+    //   sprintf(buf,"%d",val);
+    //   sprintf(buff, "%d", l);
+    //   sprintf(irbuffer, "%d", irval);
+    //   bus.write(2,buff,100);
+    //   bus.write(1,buf,100);
+    //   bus.write(6,irbuffer,100);
+    // }
+    // cpt++;
     sleep(1);
   }
 // on eteint et on allume la LED

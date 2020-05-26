@@ -10,7 +10,7 @@
 // Classe mere d'un capteur
 class Capteur: public Device
 {
-private:
+protected:
   // fait osciller la valeur du capteur de 1
   int alea;
   // valeur de la luminosite mesuree
@@ -19,7 +19,7 @@ private:
   int temps;
 public:
   // constructeur
-  Capteur(int v, int t);
+  Capteur(int t, int v);
   // thread representant le capteur et permettant de fonctionner independamment de la board
   virtual void run();
 };
