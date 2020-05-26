@@ -16,9 +16,10 @@ void Board::setup(){
   pinMode(1,INPUT);
   pinMode(0,OUTPUT);
   pinMode(2,INPUT);
-  pinMode(3,OUTPUT);
+  pinMode(3,INPUT);
   pinMode(4,INPUT);
 
+  pinMode(5,OUTPUT);
   pinMode(6,OUTPUT);
   pinMode(7,OUTPUT);
   pinMode(8,OUTPUT);
@@ -28,14 +29,12 @@ void Board::setup(){
   //%%%%%%%%%%%%%%%%
   digitalWrite(6,LOW);
   digitalWrite(8,LOW);
+  digitalWrite(5,LOW);
+  porte.close();
 }
 
 // la boucle de controle arduino
 void Board::loop(){
-  //char buf[100];
-  //int val;
-  //char buff[100];
-  //int l;
   int irval;
   int statebutton1;
   int statebutton2;
@@ -48,52 +47,56 @@ void Board::loop(){
   //static int bascule=0;
   int i=0;
   for(i=0;i<1;i++){
-    // lecture sur la pin 1 : capteur de temperature
-    //val=analogRead(1);
-    //l = analogRead(2);
     irval = digitalRead(9);
     valbatt = analogRead(10);
     porte.gestionPorte();
     sprintf(battbuffer, "Battvaleur : %d", valbatt);
     sprintf(battbuffer, "---------------Le niveau de batterie est : %d", battval);
     Serial.println(battbuffer);
-    sprintf(irbuffer, "IRvaleur : %d", irval);
-    Serial.println(irbuffer);
-    //sprintf(buff, "luminosite %d", l);
-    //Serial.println(buff);
-    //sprintf(buf,"temperature %d",val);
-    //Serial.println(buf);
     statebutton1 = digitalRead(4); // start charging
     if(statebutton1 == 0)
     {
-      sprintf(buttonbuffer, "The button is off");
+      sprintf(buttonbuffer, "The button charger is off");
       digitalWrite(11,LOW);
       digitalWrite(7,HIGH);
+      digitalWrite(8,LOW);
     }
     else
     {
-      sprintf(buttonbuffer, "The button is on");
+      sprintf(buttonbuffer, "The button charger is on");
       digitalWrite(11,HIGH); // on demarre le chargeur
-      digitalWrite(8,HIGH);
-      digitalWrite(7,LOW);
+      digitalWrite(8,HIGH); //led orange
+      digitalWrite(7,LOW); // led rouge
 
     }
     if(battval >99)
     {
       // delete the file, green led1
-      digitalWrite(6,HIGH);
-      digitalWrite(8,LOW);
+      digitalWrite(6,HIGH); // green led
+      digitalWrite(8,LOW); // yellow led
     }
     Serial.println(buttonbuffer);
 
     statebutton2 = digitalRead(2); // to exit the parking
     if(statebutton2 == HIGH)
     {
-      digitalWrite(7,HIGH); // led rouge
+      cout << "exitbutton is on " << endl;
+      digitalWrite(7,LOW); // led rouge
       digitalWrite(6,LOW); //led verte
       digitalWrite(8,LOW); // led orange
       digitalWrite(5,HIGH); // actporte
     }
+    else
+    {
+      digitalWrite(5,LOW);
+    }
+    statebutton3 = digitalRead(3); // to enter the garage
+    if(statebutton3 == HIGH)
+    {
+      digitalWrite(5,HIGH);
+      digitalWrite(7,HIGH);
+    }
+
 
     // if(ifstream("buttonexit"))
     // {

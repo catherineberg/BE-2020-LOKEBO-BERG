@@ -9,21 +9,29 @@ using namespace std;
 actPorte::actPorte(int t): Device(), state(LOW), temps(t)
 {}
 void actPorte::open(){
-    porte.open(); //døren er åpen
+    isOpen= true ; //døren er åpen
+    porte.open();
+
 }
 
 void actPorte:: close(){
-    porte.close(); //døren er lukket
+    isOpen = false ; //døren er lukket
+    porte.close();
+
 }
 
 void actPorte::run(){
   while(1){
     if(ptrmem!=NULL)
       state=*ptrmem;
-    if (state==LOW)
+    if (state==LOW){
         actPorte::close(); //If state er low, så lukker vi døren
-    else
-        actPorte::open(); //If state er high, så åpner vi døren
+        cout << "The garage door is closed " << endl;
+      }
+    else{
+       actPorte::open(); //If state er high, så åpner vi døren
+       cout << "The garage door is open " << endl;
+     }
     sleep(temps);
     }
 

@@ -36,6 +36,9 @@ void Chargeur::run()
         //cout << "Serial : Le niveau de batterie est " << battval << endl;
       }
     }
+    
+
+
     sleep(1);
   }
 }

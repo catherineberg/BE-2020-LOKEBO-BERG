@@ -6,7 +6,7 @@ class actPorte: public Device {
 public:
     void open();
     void close();
-    int Openess; // Sjekker hvor åpen døren er.
+    bool isOpen; // Sjekker hvor åpen døren er.
     actPorte(int s);
     int state;
     int temps;
