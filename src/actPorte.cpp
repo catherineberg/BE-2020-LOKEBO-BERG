@@ -9,11 +9,11 @@ using namespace std;
 actPorte::actPorte(int t): Device(), state(LOW), temps(t)
 {}
 void actPorte::open(){
-    state = HIGH; //døren er åpen
+    porte.open(); //døren er åpen
 }
 
 void actPorte:: close(){
-    state = LOW; //døren er lukket
+    porte.close(); //døren er lukket
 }
 
 void actPorte::run(){

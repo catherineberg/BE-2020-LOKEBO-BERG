@@ -21,7 +21,9 @@ int main(){
   //%%%%%%%
   //AnalogSensorLuminosity luminosite(DELAY, luminosite_environnement);
   //IntelligentDigitalActuatorLED led2(DELAY);
-  Button button1(LOW, DELAY);
+  Button button1(LOW, DELAY, "boutonchargeur");
+  Button button2(LOW,DELAY, "buttonexit");
+  Button button3(LOW,DELAY, "buttonentry");
 
   IRsensor sensor1(DELAY,infraval);
   Battery battery(DELAY,battval);
@@ -47,6 +49,8 @@ int main(){
   //%%%%%%%%%%%%%%%%%
   //esp8266.pin(2,luminosite);
   //esp8266.pin(3,led2);
+  esp8266.pin(2,button2);
+  esp8266.pin(3,button3);
   esp8266.pin(4,button1);
   esp8266.pin(5,actporte1); //Kobler til servomotoren til en pin
 

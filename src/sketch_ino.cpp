@@ -2,6 +2,11 @@
 #include "core_simulation.h"
 #include "porte.h"
 #include "mydevices.h"
+//#include <iostream.h>
+//#include <conio.h>
+#include <stdio.h>
+#include <fstream>
+
 
 // la fonction d'initialisation d'arduino
 void Board::setup(){
@@ -33,6 +38,8 @@ void Board::loop(){
   //int l;
   int irval;
   int statebutton1;
+  int statebutton2;
+  int statebutton3;
   char buttonbuffer[100];
   char irbuffer[100];
   int valbatt;
@@ -56,7 +63,7 @@ void Board::loop(){
     //Serial.println(buff);
     //sprintf(buf,"temperature %d",val);
     //Serial.println(buf);
-    statebutton1 = digitalRead(4);
+    statebutton1 = digitalRead(4); // start charging
     if(statebutton1 == 0)
     {
       sprintf(buttonbuffer, "The button is off");
@@ -78,6 +85,22 @@ void Board::loop(){
       digitalWrite(8,LOW);
     }
     Serial.println(buttonbuffer);
+
+    statebutton2 = digitalRead(2); // to exit the parking
+    if(statebutton2 == HIGH)
+    {
+      digitalWrite(7,HIGH); // led rouge
+      digitalWrite(6,LOW); //led verte
+      digitalWrite(8,LOW); // led orange
+      digitalWrite(5,HIGH); // actporte
+    }
+
+    // if(ifstream("buttonexit"))
+    // {
+    //   remove("buttonexit");
+    // }
+
+
 
     // if(cpt%5==0){
     //     // tous les 5 fois on affiche sur l ecran la temperature

@@ -13,8 +13,9 @@ class Button: public Device {
 private:
   int state;
   int temps;
+  string filename;
 public:
-  Button(int s, int t);
+  Button(int s, int t, string f);
   int getState();
   void setState(int s);
   virtual void run();

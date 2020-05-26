@@ -1,12 +1,14 @@
 #include "button.h"
 #include <fstream>
+#include <string.h>
 
 using namespace std;
 
-Button::Button(int s, int t): Device()
+Button::Button(int s, int t, string f): Device()
 {
   state = s;
   temps = t;
+  filename = f;
 }
 
 int Button::getState()
@@ -21,7 +23,7 @@ void Button::run()
 {
   while(1){
     if(ptrmem!=NULL){
-    if(ifstream("buttontest.txt"))
+    if(ifstream(filename))
     {
       setState(HIGH);
     }
