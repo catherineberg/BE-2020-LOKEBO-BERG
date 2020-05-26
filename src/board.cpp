@@ -14,9 +14,9 @@ int main(){
   AnalogSensorTemperature temperature(DELAY,TEMP);
   DigitalActuatorLED led1(DELAY);
   I2CActuatorScreen screen;
-  LED ledv(DELAY); //les leds sont tous initialisées avec une couleur blanche 
-  LED ledo(DELAY); //initialiser avec un string posait problème du coup j'ai enlevé pour le moment
-  LED ledr(DELAY);
+  LED ledv(DELAY, "vert"); //les leds sont tous initialisées avec une couleur blanche 
+  LED ledo(DELAY, "orange"); //initialiser avec un string posait problème du coup j'ai enlevé pour le moment
+  LED ledr(DELAY, "rouge");
 
   //%%%%%%%
   AnalogSensorLuminosity luminosite(DELAY, luminosite_environnement);

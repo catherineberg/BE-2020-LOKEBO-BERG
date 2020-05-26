@@ -2,8 +2,8 @@
 #include <iostream>
 using namespace std;
 
-LED::LED(int t):Actionneur(),state(LOW),temps(t){ //pas encore trouvé comment passer le string en argument
-  coleur="blanc";
+LED::LED(int t, string c):Device(),state(LOW),temps(t){ //pas encore trouvé comment passer le string en argument
+  coleur="c";
   temps=t;
 }
 

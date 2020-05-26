@@ -2,9 +2,8 @@
 #define CHARGEUR_H
 #include "mydevices.h"
 #include "core_simulation.h"
-#include "actionneur.h"
 
-class Chargeur: public Actionneur {
+class Chargeur: public Device {
 private:
   //l'etat -?
   int state;

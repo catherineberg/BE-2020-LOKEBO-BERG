@@ -1,9 +1,9 @@
 #ifndef LEDC_H
 #define LEDC_H
-#include "actionneur.h"
+#include "mydevices.h"
 using namespace std; 
 
-class LED: public Actionneur {
+class LED: public Device {
     private:
     // etat de la LED
     int state;
@@ -13,7 +13,7 @@ class LED: public Actionneur {
 
     public:
     // initialisation du temps de rafraichiisement et la coleur de la led
-    LED(int t);
+    LED(int t, string c);
     // thread representant l'actionneur et permettant de fonctionner independamment de la board
     virtual void run();
 };

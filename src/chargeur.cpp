@@ -1,7 +1,7 @@
 #include "chargeur.h"
 
 
-Chargeur::Chargeur(int t):Actionneur(),state(LOW),temps(t){}
+Chargeur::Chargeur(int t):Device(),state(LOW),temps(t){}
 
 void Chargeur::run(){
   //while loop qui regarde l'etat de Bouton?? 
