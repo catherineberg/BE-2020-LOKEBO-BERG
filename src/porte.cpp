@@ -11,7 +11,6 @@ void Porte::close()
 {
   status = CLOSED;
 }
-//setPorte har erstattet void porte::open og porte::closed
 int Porte::getStatusPorte()
 {
   return status;
@@ -28,6 +27,7 @@ void Porte::gestionPorte()
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 void setPorte(int s){ //Jeg kan bare push dine filer, ikke mine.... -Cathy 
 =======
 /*
@@ -40,6 +40,8 @@ void setPorte(int s){
 void Porte::setPorte(int s){
     status =s;
 }
+=======
+>>>>>>> fa6349632e47ea2fbf4aa1c54c68b71872d673ee
 
 Porte porte;
 */

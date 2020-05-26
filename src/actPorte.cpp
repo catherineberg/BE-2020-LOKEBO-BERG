@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 //
 //  actPorte.cpp
-//  
+//
 //
 //  Created by Catherine Berg on 25/05/2020.
 //
@@ -25,7 +25,7 @@ void actPorte:: close(Porte p){
 using namespace std;
 
 Porte:: Porte () {
-    
+
 }
 
 void actPorte:: open(){
@@ -48,7 +48,7 @@ void actPorte::run(){
     sleep(temps);
     }
 <<<<<<< HEAD
-    
+
 }
 
 

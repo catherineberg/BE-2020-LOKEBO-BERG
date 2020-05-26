@@ -6,14 +6,17 @@
 #include <thread>
 #include <mutex>
 
-
 #define DELAY 3
 #define TEMP 22
 #define HIGH 1
 #define LOW 0
 #define MAX_I2C_DEVICES 4
 #define I2C_BUFFER_SIZE 1024
+<<<<<<< HEAD
 #define MAX_IO_PIN 9
+=======
+#define MAX_IO_PIN 10
+>>>>>>> fa6349632e47ea2fbf4aa1c54c68b71872d673ee
 #define OPEN 1
 #define CLOSED 0
 

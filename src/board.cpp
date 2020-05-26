@@ -48,9 +48,10 @@ int main(){
 #include "core_simulation.h"
 #include "mydevices.h"
 #include "capteur.h"
-#include "luminosity.h"
+#include "IRsensor.h"
 #include "button.h"
 #include "porte.h"
+<<<<<<< HEAD
 <<<<<<< HEAD
 #include "chargeur.h"
 #include "battery.h"
@@ -101,6 +102,10 @@ int main(){
 }
 
 >>>>>>> njord_branch2
+=======
+#include "battery.h"
+#include "chargeur.h"
+>>>>>>> fa6349632e47ea2fbf4aa1c54c68b71872d673ee
 
 
 int main(){
@@ -110,23 +115,32 @@ int main(){
   AnalogSensorTemperature temperature(DELAY,TEMP);
   DigitalActuatorLED led1(DELAY);
   I2CActuatorScreen screen;
+<<<<<<< HEAD
   actPorte actporte1;
 <<<<<<< HEAD
   
 
 =======
 >>>>>>> njord_branch2
+=======
+>>>>>>> fa6349632e47ea2fbf4aa1c54c68b71872d673ee
 
   //%%%%%%%
   AnalogSensorLuminosity luminosite(DELAY, luminosite_environnement);
   IntelligentDigitalActuatorLED led2(DELAY);
   Button button1(LOW, DELAY);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   esp8266.pin(5,actporte1); //Kobler til servomotoren til en pin
 =======
   esp8266.pin(5,actporte1); //Kobler til servomotoren til en pin 
 >>>>>>> njord_branch2
+=======
+  IRsensor sensor1(DELAY,infraval);
+  Battery battery(DELAY,50);
+  Chargeur chargeur(DELAY, battery);
+>>>>>>> fa6349632e47ea2fbf4aa1c54c68b71872d673ee
 
   //%%%%%%
   // initialisation du materiel
@@ -142,6 +156,9 @@ int main(){
   esp8266.pin(2,luminosite);
   esp8266.pin(3,led2);
   esp8266.pin(4,button1);
+  esp8266.pin(6,sensor1);
+  esp8266.pin(7,battery);
+  esp8266.pin(8,chargeur);
   //%%%%%%%%%%%%%%%%%%%
   // allumage de la carte
   esp8266.run();

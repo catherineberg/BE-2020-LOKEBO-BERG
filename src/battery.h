@@ -14,7 +14,7 @@ public:
   Battery(int v, int t);
   virtual void run();
   int checkBattery();
-  void setBattery(int b);
+  void setBattery(int v);
 };
 
 #endif

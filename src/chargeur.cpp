@@ -1,4 +1,5 @@
 #include "chargeur.h"
+#include "battery.h"
 
 
 <<<<<<< HEAD
@@ -9,7 +10,7 @@ Chargeur::Chargeur(int t, Battery b):Device(),state(LOW) ,temps(t), batt(b)
 
 void Chargeur::chargeBatt()
 {
-  batt.setBattery(b.checkBattery()+10);
+  batt.setBattery(batt.checkBattery()+10);
 }
 
 void Chargeur::run()
@@ -26,9 +27,11 @@ void Chargeur::run()
       }
       else
       {
-        chargeBatt();
+        //chargeBatt();
+        cout << "-------------------------------------------------------charging" << endl;
       }
     }
+    sleep(1);
   }
 }
 =======

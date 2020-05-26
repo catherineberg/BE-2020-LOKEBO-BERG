@@ -13,9 +13,14 @@ void Board::setup(){
   pinMode(2,INPUT);
   pinMode(3,OUTPUT);
   pinMode(4,INPUT);
+<<<<<<< HEAD
 
   pinMode(6,OUTPUT);
   pinMode(7,OUTPUT);
+=======
+  pinMode(6,INPUT);
+  pinMode(7,INPUT);
+>>>>>>> fa6349632e47ea2fbf4aa1c54c68b71872d673ee
   pinMode(8,OUTPUT);
   //%%%%%%%%%%%%%%%%
 }
@@ -26,16 +31,30 @@ void Board::loop(){
   int val;
   char buff[100];
   int l;
+  int irval;
   int statebutton1;
   char buttonbuffer[100];
-  static int cpt=0;
+  char irbuffer[100];
+  int battval;
+  char battbuffer[100];
+  //static int cpt=0;
   static int bascule=0;
   int i=0;
   for(i=0;i<1;i++){
     // lecture sur la pin 1 : capteur de temperature
     val=analogRead(1);
     l = analogRead(2);
+<<<<<<< HEAD
     
+=======
+    irval = digitalRead(6);
+    battval = analogRead(7);
+    porte.gestionPorte();
+    sprintf(battbuffer, "Battvaleur : %d", battval);
+    Serial.println(battbuffer);
+    sprintf(irbuffer, "IRvaleur : %d", irval);
+    Serial.println(irbuffer);
+>>>>>>> fa6349632e47ea2fbf4aa1c54c68b71872d673ee
     sprintf(buff, "luminosite %d", l);
     Serial.println(buff);
     sprintf(buf,"temperature %d",val);
@@ -44,21 +63,26 @@ void Board::loop(){
     if(statebutton1 == 0)
     {
       sprintf(buttonbuffer, "The button is off");
+      digitalWrite(8,LOW);
     }
     else
     {
       sprintf(buttonbuffer, "The button is on");
+      digitalWrite(8,HIGH);
+
     }
     Serial.println(buttonbuffer);
 
-    if(cpt%5==0){
-        // tous les 5 fois on affiche sur l ecran la temperature
-      sprintf(buf,"%d",val);
-      sprintf(buff, "%d", l);
-      bus.write(2,buff,100);
-      bus.write(1,buf,100);
-    }
-    cpt++;
+    // if(cpt%5==0){
+    //     // tous les 5 fois on affiche sur l ecran la temperature
+    //   sprintf(buf,"%d",val);
+    //   sprintf(buff, "%d", l);
+    //   sprintf(irbuffer, "%d", irval);
+    //   bus.write(2,buff,100);
+    //   bus.write(1,buf,100);
+    //   bus.write(6,irbuffer,100);
+    // }
+    // cpt++;
     sleep(1);
   }
 //on eteint et on allume la LED
