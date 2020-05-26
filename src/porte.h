@@ -15,12 +15,17 @@ private:
   int status;
 public:
   Porte();
-  //void open();
-//  void close(); setPorte har erstattet disse to
+  void open();
+  void close(); setPorte har erstattet disse to
   void gestionPorte();
   int getStatusPorte();
   void setPorte(int s);
   //~Porte();
+<<<<<<< HEAD
+   
+=======
+    void setPorte(int s);
+>>>>>>> actPorte
 };
 
 extern Porte porte;

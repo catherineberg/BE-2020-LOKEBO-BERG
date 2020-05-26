@@ -3,14 +3,14 @@
 using namespace std;
 
 Porte::Porte() : status(CLOSED) {}
-/*void Porte::open()
+void Porte::open()
 {
   status = OPEN;
 } 
 void Porte::close()
 {
   status = CLOSED;
-}*/
+}
 //setPorte har erstattet void porte::open og porte::closed
 int Porte::getStatusPorte()
 {
@@ -27,8 +27,13 @@ void Porte::gestionPorte()
     cout << "-------------------------- La porte est fermee" << endl;
   }
 }
-void setPorte(int s){
+void setPorte(int s){ //Jeg kan bare push dine filer, ikke mine.... -Cathy 
     status=s;
+}
+
+
+void Porte::setPorte(int s){
+    status =s;
 }
 
 Porte porte;
