@@ -32,4 +32,8 @@ void setPorte(int s){ //Jeg kan bare push dine filer, ikke mine.... -Cathy
 }
 
 
+void Porte::setPorte(int s){
+    status =s;
+}
+
 Porte porte;

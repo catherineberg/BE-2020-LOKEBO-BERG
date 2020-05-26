@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //
 //  actPorte.cpp
 //  
@@ -14,6 +15,26 @@ void actPorte:: open(Porte p){
 }
 void actPorte:: close(Porte p){
     p.setPorte(0); //Closes door
+=======
+#include "capteurs.h"
+#include "mydevices.h"
+#include "actPorte.h"
+#include "porte.h"
+
+
+using namespace std;
+
+Porte:: Porte () {
+    
+}
+
+void actPorte:: open(){
+    p.setPorte(1); //døren er åpen
+}
+
+void actPorte:: close(){
+    p.setPorte(0); //døren er lukket
+>>>>>>> actPorte
 }
 
 void actPorte::run(){
@@ -26,7 +47,11 @@ void actPorte::run(){
         p.setPorte(1); //If state er high, så åpner vi døren
     sleep(temps);
     }
+<<<<<<< HEAD
     
 }
 
 
+=======
+}
+>>>>>>> actPorte

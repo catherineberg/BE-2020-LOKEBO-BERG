@@ -21,7 +21,11 @@ public:
   int getStatusPorte();
   void setPorte(int s);
   //~Porte();
+<<<<<<< HEAD
    
+=======
+    void setPorte(int s);
+>>>>>>> actPorte
 };
 
 extern Porte porte;
