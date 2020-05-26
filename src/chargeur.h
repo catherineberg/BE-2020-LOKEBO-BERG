@@ -2,19 +2,11 @@
 #define CHARGEUR_H
 #include "mydevices.h"
 #include "core_simulation.h"
-<<<<<<< HEAD
 #include "actionneur.h"
 #include "battery.h"
 
-<<<<<<< HEAD
-class Chargeur: Device {
-=======
 
 class Chargeur: public Device {
->>>>>>> njord_branch2
-=======
-class Chargeur: public Device {
->>>>>>> fa6349632e47ea2fbf4aa1c54c68b71872d673ee
 private:
   // si le chargeur est ON (HIGH) ou OFF (LOW)
   int state;

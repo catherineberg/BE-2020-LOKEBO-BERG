@@ -9,19 +9,16 @@ void Board::setup(){
 // on fixe les pin en entree et en sorite en fonction des capteurs/actionneurs mis sur la carte
   pinMode(1,INPUT);
   pinMode(0,OUTPUT);
-  //%%%%%%%%%%%%%%%%%
   pinMode(2,INPUT);
   pinMode(3,OUTPUT);
   pinMode(4,INPUT);
-<<<<<<< HEAD
 
   pinMode(6,OUTPUT);
   pinMode(7,OUTPUT);
-=======
-  pinMode(6,INPUT);
-  pinMode(7,INPUT);
->>>>>>> fa6349632e47ea2fbf4aa1c54c68b71872d673ee
   pinMode(8,OUTPUT);
+  pinMode(9,INPUT);
+  pinMode(10,INPUT);
+  pinMode(11,OUTPUT);
   //%%%%%%%%%%%%%%%%
 }
 
@@ -44,9 +41,6 @@ void Board::loop(){
     // lecture sur la pin 1 : capteur de temperature
     val=analogRead(1);
     l = analogRead(2);
-<<<<<<< HEAD
-    
-=======
     irval = digitalRead(6);
     battval = analogRead(7);
     porte.gestionPorte();
@@ -54,7 +48,6 @@ void Board::loop(){
     Serial.println(battbuffer);
     sprintf(irbuffer, "IRvaleur : %d", irval);
     Serial.println(irbuffer);
->>>>>>> fa6349632e47ea2fbf4aa1c54c68b71872d673ee
     sprintf(buff, "luminosite %d", l);
     Serial.println(buff);
     sprintf(buf,"temperature %d",val);
