@@ -19,6 +19,7 @@ public:
   void close();
   void gestionPorte();
   int getStatusPorte();
+  void setPorte(int s);
   //~Porte();
 };
 

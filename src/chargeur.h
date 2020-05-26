@@ -2,8 +2,8 @@
 #define CHARGEUR_H
 #include "mydevices.h"
 #include "core_simulation.h"
-#include "actionneur.h"
-//#include "battery.h"
+#include "battery.h"
+
 
 class Chargeur: public Device {
 private:
@@ -14,7 +14,7 @@ private:
   int temps;
 
   // une batterie
-
+  //Battery batt;
 public:
   // initialisation du temps de rafraichiisement
   Chargeur(int t);

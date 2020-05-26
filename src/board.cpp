@@ -4,8 +4,10 @@
 #include "IRsensor.h"
 #include "button.h"
 #include "porte.h"
-#include "battery.h"
 #include "chargeur.h"
+#include "battery.h"
+#include "actPorte.h"
+#include "ledc.h"
 
 
 int main(){
@@ -20,9 +22,17 @@ int main(){
   AnalogSensorLuminosity luminosite(DELAY, luminosite_environnement);
   IntelligentDigitalActuatorLED led2(DELAY);
   Button button1(LOW, DELAY);
+
   IRsensor sensor1(DELAY,infraval);
   Battery battery(DELAY,battval);
   Chargeur chargeur(DELAY);
+
+  actPorte actporte1(DELAY);
+
+
+  LED ledv(DELAY, "vert"); //les leds sont tous initialisées avec une couleur blanche
+  LED ledo(DELAY, "orange"); //initialiser avec un string posait problème du coup j'ai enlevé pour le moment
+  LED ledr(DELAY, "rouge");
 
   //%%%%%%
   // initialisation du materiel
@@ -38,9 +48,15 @@ int main(){
   esp8266.pin(2,luminosite);
   esp8266.pin(3,led2);
   esp8266.pin(4,button1);
-  esp8266.pin(6,sensor1);
-  esp8266.pin(7,battery);
-  esp8266.pin(8,chargeur);
+  esp8266.pin(5,actporte1); //Kobler til servomotoren til en pin
+
+  esp8266.pin(6,ledv);
+  esp8266.pin(7,ledr);
+  esp8266.pin(8,ledo);
+
+  esp8266.pin(9,sensor1);
+  esp8266.pin(10,battery);
+  esp8266.pin(11,chargeur);
   //%%%%%%%%%%%%%%%%%%%
   // allumage de la carte
   esp8266.run();

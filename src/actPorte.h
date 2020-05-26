@@ -1,13 +1,16 @@
 #ifndef CAPTEURS_H
 #define CAPTEURS_H
-#include "actionneur.h"
 
 
-class actPorte: public Actionneur{
+class actPorte: public Device {
 public:
-    void open(Porte p);
-    void close(Porte p);
+    void open();
+    void close();
     int Openess; // Sjekker hvor åpen døren er.
+    actPorte(int s);
+    int state;
+    int temps;
+    void run();
 };
 
 #endif
