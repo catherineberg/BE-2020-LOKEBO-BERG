@@ -1,15 +1,14 @@
 #include "chargeur.h"
-#include "battery.h"
 
 
-Chargeur::Chargeur(int t, Battery b):Device(),state(LOW) ,temps(t), batt(b)
+Chargeur::Chargeur(int t):Device(),state(LOW) ,temps(t)
 {
 
 }
 
 void Chargeur::chargeBatt()
 {
-  batt.setBattery(batt.checkBattery()+10);
+  battval+=5;
 }
 
 void Chargeur::run()
@@ -20,16 +19,21 @@ void Chargeur::run()
     state=*ptrmem;
     if(state == HIGH)
     {
-      if(batt.checkBattery() > 90)
+      if(battval > 90)
+      //if(batt.checkBattery() > 90)
       {
-        batt.setBattery(100);
+        //batt.setBattery(100);
+        battval = 100;
+        cout << "La batterie est pleine va conduire !" << endl;
       }
       else
       {
-        //chargeBatt();
-        cout << "-------------------------------------------------------charging" << endl;
+        chargeBatt();
+        //battval+=4;
+        //cout << "-------------------------------------battval = " << battval << endl;
+        cout << "-------------------------------------------------------charging..." << endl;
       }
     }
-    sleep(1);
+    sleep(2);
   }
 }

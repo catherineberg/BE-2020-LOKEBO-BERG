@@ -3,7 +3,7 @@
 #include "mydevices.h"
 #include "core_simulation.h"
 #include "actionneur.h"
-#include "battery.h"
+//#include "battery.h"
 
 class Chargeur: public Device {
 private:
@@ -14,10 +14,10 @@ private:
   int temps;
 
   // une batterie
-  Battery batt;
+
 public:
   // initialisation du temps de rafraichiisement
-  Chargeur(int t, Battery b);
+  Chargeur(int t);
   void chargeBatt();
   // thread representant l'actionneur et permettant de fonctionner independamment de la board
   virtual void run();

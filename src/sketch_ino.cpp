@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include "core_simulation.h"
 #include "porte.h"
+#include "mydevices.h"
 
 // la fonction d'initialisation d'arduino
 void Board::setup(){
@@ -29,7 +30,7 @@ void Board::loop(){
   int statebutton1;
   char buttonbuffer[100];
   char irbuffer[100];
-  int battval;
+  int valbat;
   char battbuffer[100];
   //static int cpt=0;
   static int bascule=0;
@@ -39,9 +40,9 @@ void Board::loop(){
     val=analogRead(1);
     l = analogRead(2);
     irval = digitalRead(6);
-    battval = analogRead(7);
+    valbat = analogRead(7);
     porte.gestionPorte();
-    sprintf(battbuffer, "Battvaleur : %d", battval);
+    sprintf(battbuffer, "Battvaleur : %d", valbat);
     Serial.println(battbuffer);
     sprintf(irbuffer, "IRvaleur : %d", irval);
     Serial.println(irbuffer);
@@ -73,7 +74,7 @@ void Board::loop(){
     //   bus.write(6,irbuffer,100);
     // }
     // cpt++;
-    sleep(1);
+    sleep(2);
   }
 // on eteint et on allume la LED
   if(bascule){

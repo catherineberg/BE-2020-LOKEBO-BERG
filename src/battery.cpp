@@ -1,5 +1,6 @@
 //#include "capteur.h"
 #include "battery.h"
+#include "mydevices.h"
 
 using namespace std;
 
@@ -8,11 +9,11 @@ Battery::Battery(int v, int t) : Capteur( v,  t) {
 }
 
 int Battery::checkBattery() {
-  return val;
+  return battval;
 }
 void Battery::setBattery(int v)
 {
-  val = v;
+  battval = v;
 }
 
 void Battery::run()
@@ -20,7 +21,7 @@ void Battery::run()
   while(1)
   {
     if(ptrmem!=NULL)
-    *ptrmem = val ; //ja han faar inn val , saa den blir ikkje endra tydeligvis
+    *ptrmem = battval ; //ja han faar inn val , saa den blir ikkje endra tydeligvis
     sleep(temps);
   }
 }

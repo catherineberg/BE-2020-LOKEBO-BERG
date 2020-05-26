@@ -21,8 +21,8 @@ int main(){
   IntelligentDigitalActuatorLED led2(DELAY);
   Button button1(LOW, DELAY);
   IRsensor sensor1(DELAY,infraval);
-  Battery battery(DELAY,50);
-  Chargeur chargeur(DELAY, battery);
+  Battery battery(DELAY,battval);
+  Chargeur chargeur(DELAY);
 
   //%%%%%%
   // initialisation du materiel
