@@ -10,7 +10,7 @@
 // Classe mere d'un capteur
 class Capteur: public Device
 {
-protected:
+public:
   // fait osciller la valeur du capteur de 1
   int alea;
   // valeur de la luminosite mesuree

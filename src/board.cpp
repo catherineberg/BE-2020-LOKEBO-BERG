@@ -4,6 +4,8 @@
 #include "IRsensor.h"
 #include "button.h"
 #include "porte.h"
+#include "battery.h"
+#include "chargeur.h"
 
 
 int main(){
@@ -19,6 +21,8 @@ int main(){
   IntelligentDigitalActuatorLED led2(DELAY);
   Button button1(LOW, DELAY);
   IRsensor sensor1(DELAY,infraval);
+  Battery battery(DELAY,50);
+  Chargeur chargeur(DELAY, battery);
 
   //%%%%%%
   // initialisation du materiel
@@ -35,6 +39,8 @@ int main(){
   esp8266.pin(3,led2);
   esp8266.pin(4,button1);
   esp8266.pin(6,sensor1);
+  esp8266.pin(7,battery);
+  esp8266.pin(8,chargeur);
   //%%%%%%%%%%%%%%%%%%%
   // allumage de la carte
   esp8266.run();

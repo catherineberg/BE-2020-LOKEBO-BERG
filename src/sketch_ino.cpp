@@ -14,6 +14,8 @@ void Board::setup(){
   pinMode(3,OUTPUT);
   pinMode(4,INPUT);
   pinMode(6,INPUT);
+  pinMode(7,INPUT);
+  pinMode(8,OUTPUT);
   //%%%%%%%%%%%%%%%%
 }
 
@@ -27,6 +29,8 @@ void Board::loop(){
   int statebutton1;
   char buttonbuffer[100];
   char irbuffer[100];
+  int battval;
+  char battbuffer[100];
   //static int cpt=0;
   static int bascule=0;
   int i=0;
@@ -35,7 +39,10 @@ void Board::loop(){
     val=analogRead(1);
     l = analogRead(2);
     irval = digitalRead(6);
+    battval = analogRead(7);
     porte.gestionPorte();
+    sprintf(battbuffer, "Battvaleur : %d", battval);
+    Serial.println(battbuffer);
     sprintf(irbuffer, "IRvaleur : %d", irval);
     Serial.println(irbuffer);
     sprintf(buff, "luminosite %d", l);
@@ -46,10 +53,13 @@ void Board::loop(){
     if(statebutton1 == 0)
     {
       sprintf(buttonbuffer, "The button is off");
+      digitalWrite(8,LOW);
     }
     else
     {
       sprintf(buttonbuffer, "The button is on");
+      digitalWrite(8,HIGH);
+
     }
     Serial.println(buttonbuffer);
 
