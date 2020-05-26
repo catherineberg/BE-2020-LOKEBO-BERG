@@ -4,7 +4,7 @@
 #include "luminosity.h"
 #include "button.h"
 #include "porte.h"
-#include "led.h"
+#include "led.cpp"
 
 
 int main(){
@@ -14,9 +14,9 @@ int main(){
   AnalogSensorTemperature temperature(DELAY,TEMP);
   DigitalActuatorLED led1(DELAY);
   I2CActuatorScreen screen;
-  LED ledv(DELAY, "vert");
-  LED ledo(DELAY, "orange");
-  LED ledr(DELAY, "rouge");
+  LED ledv(DELAY); //les leds sont tous initialisées avec une couleur blanche 
+  LED ledo(DELAY); //initialiser avec un string posait problème du coup j'ai enlevé pour le moment
+  LED ledr(DELAY);
 
   //%%%%%%%
   AnalogSensorLuminosity luminosite(DELAY, luminosite_environnement);

@@ -35,7 +35,7 @@ void Board::loop(){
     // lecture sur la pin 1 : capteur de temperature
     val=analogRead(1);
     l = analogRead(2);
-    porte.gestionPorte();
+    //porte.gestionPorte();
     sprintf(buff, "luminosite %d", l);
     Serial.println(buff);
     sprintf(buf,"temperature %d",val);

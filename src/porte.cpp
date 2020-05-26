@@ -27,8 +27,10 @@ void Porte::gestionPorte()
     cout << "-------------------------- La porte est fermee" << endl;
   }
 }
+/*
 void setPorte(int s){
     status=s;
 }
 
 Porte porte;
+*/

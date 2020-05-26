@@ -1,8 +1,10 @@
-#include "led.h"
+#include "ledc.h"
 #include <iostream>
 using namespace std;
 
-LED::LED(int t, string c):Actionneur(),state(LOW),temps(t){
+LED::LED(int t):Actionneur(),state(LOW),temps(t){ //pas encore trouvé comment passer le string en argument
+  coleur="blanc";
+  temps=t;
 }
 
 //Est-ce que c'est bon ici? Faut peut etre definir le fnct run plutot ? 
