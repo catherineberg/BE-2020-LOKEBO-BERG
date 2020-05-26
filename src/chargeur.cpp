@@ -31,8 +31,9 @@ void Chargeur::run()
       {
         //chargeBatt();
         battval+=5;
-        cout << "VALBATT = " << battval << endl;
+        //cout << "\033[1;32mbold red text\033[0m\n";
         cout << "--------------------------------charging..." << endl;
+        //cout << "Serial : Le niveau de batterie est " << battval << endl;
       }
     }
     sleep(1);

@@ -14,13 +14,13 @@ int main(){
   // creation d'une board
   Board esp8266;
   // achat des senseurs et actionneurs
-  AnalogSensorTemperature temperature(DELAY,TEMP);
-  DigitalActuatorLED led1(DELAY);
+  //AnalogSensorTemperature temperature(DELAY,TEMP);
+  //DigitalActuatorLED led1(DELAY);
   I2CActuatorScreen screen;
 
   //%%%%%%%
-  AnalogSensorLuminosity luminosite(DELAY, luminosite_environnement);
-  IntelligentDigitalActuatorLED led2(DELAY);
+  //AnalogSensorLuminosity luminosite(DELAY, luminosite_environnement);
+  //IntelligentDigitalActuatorLED led2(DELAY);
   Button button1(LOW, DELAY);
 
   IRsensor sensor1(DELAY,infraval);
@@ -30,9 +30,9 @@ int main(){
   actPorte actporte1(DELAY);
 
 
-  LED ledv(DELAY, "vert"); //les leds sont tous initialisées avec une couleur blanche
-  LED ledo(DELAY, "orange"); //initialiser avec un string posait problème du coup j'ai enlevé pour le moment
-  LED ledr(DELAY, "rouge");
+  LED ledv(DELAY, "\033[1;32mvert\033[0m"); //les leds sont tous initialisées avec une couleur blanche
+  LED ledo(DELAY, "\033[1;33mjaune\033[0m"); //initialiser avec un string posait problème du coup j'ai enlevé pour le moment
+  LED ledr(DELAY, "\033[1;31mrouge\033[0m");
 
   //%%%%%%
   // initialisation du materiel
@@ -41,12 +41,12 @@ int main(){
   //%%%%%%%%%%%%%%%%%%%
 
   // branchement des capteurs actionneurs
-  esp8266.pin(1,temperature);
-  esp8266.pin(0,led1);
+  //esp8266.pin(1,temperature);
+  //esp8266.pin(0,led1);
   esp8266.i2c(1,screen);
   //%%%%%%%%%%%%%%%%%
-  esp8266.pin(2,luminosite);
-  esp8266.pin(3,led2);
+  //esp8266.pin(2,luminosite);
+  //esp8266.pin(3,led2);
   esp8266.pin(4,button1);
   esp8266.pin(5,actporte1); //Kobler til servomotoren til en pin
 

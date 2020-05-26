@@ -21,14 +21,16 @@ void Board::setup(){
   pinMode(10,INPUT);
   pinMode(11,OUTPUT);
   //%%%%%%%%%%%%%%%%
+  digitalWrite(6,LOW);
+  digitalWrite(8,LOW);
 }
 
 // la boucle de controle arduino
 void Board::loop(){
-  char buf[100];
-  int val;
-  char buff[100];
-  int l;
+  //char buf[100];
+  //int val;
+  //char buff[100];
+  //int l;
   int irval;
   int statebutton1;
   char buttonbuffer[100];
@@ -36,39 +38,44 @@ void Board::loop(){
   int valbatt;
   char battbuffer[100];
   //static int cpt=0;
-  static int bascule=0;
+  //static int bascule=0;
   int i=0;
   for(i=0;i<1;i++){
     // lecture sur la pin 1 : capteur de temperature
-    val=analogRead(1);
-    l = analogRead(2);
+    //val=analogRead(1);
+    //l = analogRead(2);
     irval = digitalRead(9);
     valbatt = analogRead(10);
     porte.gestionPorte();
     sprintf(battbuffer, "Battvaleur : %d", valbatt);
+    sprintf(battbuffer, "---------------Le niveau de batterie est : %d", battval);
     Serial.println(battbuffer);
     sprintf(irbuffer, "IRvaleur : %d", irval);
     Serial.println(irbuffer);
-    sprintf(buff, "luminosite %d", l);
-    Serial.println(buff);
-    sprintf(buf,"temperature %d",val);
-    Serial.println(buf);
+    //sprintf(buff, "luminosite %d", l);
+    //Serial.println(buff);
+    //sprintf(buf,"temperature %d",val);
+    //Serial.println(buf);
     statebutton1 = digitalRead(4);
     if(statebutton1 == 0)
     {
       sprintf(buttonbuffer, "The button is off");
       digitalWrite(11,LOW);
+      digitalWrite(7,HIGH);
     }
     else
     {
       sprintf(buttonbuffer, "The button is on");
       digitalWrite(11,HIGH); // on demarre le chargeur
+      digitalWrite(8,HIGH);
+      digitalWrite(7,LOW);
 
     }
-    if(valbatt >99)
+    if(battval >99)
     {
       // delete the file, green led1
       digitalWrite(6,HIGH);
+      digitalWrite(8,LOW);
     }
     Serial.println(buttonbuffer);
 
@@ -85,14 +92,14 @@ void Board::loop(){
     sleep(1);
   }
 //on eteint et on allume la LED
-  if(bascule){
-    digitalWrite(0,HIGH);
-    digitalWrite(3,HIGH);
-  }
-  else {
-    digitalWrite(0,LOW);
-    digitalWrite(3,LOW);
-  }
-  bascule=1-bascule;
+  // if(bascule){
+  //   digitalWrite(0,HIGH);
+  //   digitalWrite(3,HIGH);
+  // }
+  // else {
+  //   digitalWrite(0,LOW);
+  //   digitalWrite(3,LOW);
+  // }
+  // bascule=1-bascule;
 
 }
