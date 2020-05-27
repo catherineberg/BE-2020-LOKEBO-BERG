@@ -35,19 +35,19 @@ void Board::setup(){
 
 // la boucle de controle arduino
 void Board::loop(){
-  int irval;
+  //int irval;
   int statebutton1;
   int statebutton2;
   int statebutton3;
   char buttonbuffer[100];
-  char irbuffer[100];
+  //char irbuffer[100];
   int valbatt;
   char battbuffer[100];
   //static int cpt=0;
   //static int bascule=0;
   int i=0;
   for(i=0;i<1;i++){
-    irval = digitalRead(9);
+    //irval = digitalRead(9);
     valbatt = analogRead(10);
     porte.gestionPorte();
     sprintf(battbuffer, "Battvaleur : %d", valbatt);
