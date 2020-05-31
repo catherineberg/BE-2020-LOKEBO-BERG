@@ -17,9 +17,9 @@ int main(){
   I2CActuatorScreen screen;
 
 
-  Button button1(LOW, DELAY, "chargerbutton");
-  Button button2(LOW,DELAY, "exitbutton");
-  Button button3(LOW,DELAY, "infrared");
+  Button button1(LOW, DELAY, "chargerbutton"); // bouton pour démarrer le chargeur
+  Button button2(LOW,DELAY, "exitbutton"); // bouton pour éteindre le chargeur et ouvrir la porte
+  Button button3(LOW,DELAY, "infrared"); // bouton qui simule la détection d'une voiture
 
   IRsensor sensor1(DELAY,infraval);
   Battery battery(DELAY,battval);
@@ -28,8 +28,8 @@ int main(){
   actPorte actporte1(DELAY);
 
 
-  LED ledv(DELAY, "\033[1;32mvert\033[0m"); //les leds sont tous initialisées avec une couleur blanche
-  LED ledo(DELAY, "\033[1;33mjaune\033[0m"); //initialiser avec un string posait problème du coup j'ai enlevé pour le moment
+  LED ledv(DELAY, "\033[1;32mvert\033[0m");
+  LED ledo(DELAY, "\033[1;33mjaune\033[0m");
   LED ledr(DELAY, "\033[1;31mrouge\033[0m");
 
 

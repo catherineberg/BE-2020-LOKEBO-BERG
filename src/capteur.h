@@ -13,10 +13,11 @@ class Capteur: public Device
 public:
   // fait osciller la valeur du capteur de 1
   int alea;
-  // valeur de la luminosite mesuree
-  int val;
   // temps entre 2 prises de valeurs
   int temps;
+  // valeur de la luminosite mesuree
+  int val;
+
 public:
   // constructeur
   Capteur(int t, int v);

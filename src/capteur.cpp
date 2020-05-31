@@ -1,9 +1,8 @@
 #include "capteur.h"
-//#include "mydevices.h"
 
 using namespace std;
 
-Capteur::Capteur(int t, int v): Device(),  val(v),temps(t)
+Capteur::Capteur(int t, int v): Device(),temps(t),  val(v)
 {
   alea = 1;
 }

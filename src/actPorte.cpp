@@ -6,16 +6,17 @@
 
 using namespace std;
 
+// actionneur qui ouvre et ferme la porte du garage
 actPorte::actPorte(int t): Device(), state(LOW), temps(t)
 {}
 void actPorte::open(){
-    isOpen= true ; //døren er åpen
+    isOpen= true ;
     porte.open();
 
 }
 
 void actPorte:: close(){
-    isOpen = false ; //døren er lukket
+    isOpen = false ;
     porte.close();
 
 }
@@ -25,11 +26,11 @@ void actPorte::run(){
     if(ptrmem!=NULL)
       state=*ptrmem;
     if (state==LOW){
-        actPorte::close(); //If state er low, så lukker vi døren
+        actPorte::close();
         cout << "The garage door is closed " << endl;
       }
     else{
-       actPorte::open(); //If state er high, så åpner vi døren
+       actPorte::open();
        cout << "The garage door is open " << endl;
      }
     sleep(temps);

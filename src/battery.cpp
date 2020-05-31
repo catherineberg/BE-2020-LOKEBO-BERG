@@ -20,7 +20,7 @@ void Battery::run()
   while(1)
   {
     if(ptrmem!=NULL)
-    *ptrmem = val ; //ja han faar inn val , saa den blir ikkje endra tydeligvis
+    *ptrmem = val ;
     sleep(temps);
   }
 }

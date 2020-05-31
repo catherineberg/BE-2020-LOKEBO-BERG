@@ -4,8 +4,9 @@
 
 using namespace std;
 
-IRsensor::IRsensor(int t, int v) : Device(), temps(t), val(v)
+IRsensor::IRsensor(int t, int v) : Capteur(t,v)
 {
+  alea = 0;
 }
 
   void IRsensor::run()
@@ -14,7 +15,6 @@ IRsensor::IRsensor(int t, int v) : Device(), temps(t), val(v)
   {
     if(ptrmem!=NULL)
     *ptrmem=val;
-    //cout << "IRsensor : " << val+alea << endl;
     sleep(temps);
   }
 }

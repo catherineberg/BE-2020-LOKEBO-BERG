@@ -6,13 +6,12 @@
 #include <unistd.h>
 #include <string.h>
 #include "core_simulation.h"
-//#include "capteur.h"
+#include "capteur.h"
 
 // classe bouton
-class Button: public Device {
+class Button: public Capteur {
 private:
-  int state;
-  int temps;
+
   string filename;
 public:
   Button(int s, int t, string f);

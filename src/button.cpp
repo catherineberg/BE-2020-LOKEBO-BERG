@@ -4,20 +4,18 @@
 
 using namespace std;
 
-Button::Button(int s, int t, string f): Device()
+Button::Button(int t, int v, string f): Capteur(t,v)
 {
-  state = s;
-  temps = t;
   filename = f;
 }
 
 int Button::getState()
 {
-  return state;
+  return val;
 }
 void Button::setState(int s)
 {
-  state = s;
+  val = s;
 }
 void Button::run()
 {

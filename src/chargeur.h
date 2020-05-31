@@ -13,8 +13,6 @@ private:
   // temps entre 2 affichage - pas utile si on a le LED ...?
   int temps;
 
-  // une batterie
-  //Battery batt;
 public:
   // initialisation du temps de rafraichiisement
   Chargeur(int t);

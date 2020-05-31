@@ -13,18 +13,6 @@ extern int infraval;
 extern int battval;
 //%%%%%%%%%%%%%%%%%
 
-// class Button: public Device {
-// private:
-//   int state;
-//   int temps;
-// public:
-//   Button(int s, int t);
-//   int getState();
-//   void setState(int s);
-//   virtual void run();
-// //  void gestionButton();
-// };
-
 class IntelligentDigitalActuatorLED: public Device
 {
 private:

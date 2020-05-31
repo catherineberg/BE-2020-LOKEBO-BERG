@@ -8,7 +8,7 @@
 #include "core_simulation.h"
 #include "capteur.h"
 
-// classe qui represente la porte d'entree pour une voiture
+// classe qui represente la porte d'entree du garage
 class Porte
 {
 private:

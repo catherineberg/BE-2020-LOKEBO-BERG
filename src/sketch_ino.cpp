@@ -30,52 +30,47 @@ void Board::setup(){
   digitalWrite(6,LOW);
   digitalWrite(8,LOW);
   digitalWrite(5,LOW);
+  digitalWrite(7,LOW);
   porte.close();
 }
 
 // la boucle de controle arduino
 void Board::loop(){
-  //int irval;
   int statebutton1;
   int statebutton2;
   int statebutton3;
   char buttonbuffer[100];
-  //char irbuffer[100];
   int valbatt;
   char battbuffer[100];
-  //static int cpt=0;
-  //static int bascule=0;
   int i=0;
   for(i=0;i<1;i++){
-    //irval = digitalRead(9);
     valbatt = analogRead(10);
     porte.gestionPorte();
     sprintf(battbuffer, "Battvaleur : %d", valbatt);
-    sprintf(battbuffer, "---------------Le niveau de batterie est : %d", battval);
+    sprintf(battbuffer, "------------------------Le niveau de batterie est : %d", battval);
     Serial.println(battbuffer);
     statebutton1 = digitalRead(4); // start charging
     if(statebutton1 == 0)
     {
-      sprintf(buttonbuffer, "The button charger is off");
+      sprintf(buttonbuffer, "The charger button is off");
       digitalWrite(11,LOW);
       digitalWrite(7,HIGH);
       digitalWrite(8,LOW);
     }
     else
     {
-      sprintf(buttonbuffer, "The button charger is on");
+      sprintf(buttonbuffer, "The charger button is on");
       digitalWrite(11,HIGH); // on demarre le chargeur
       digitalWrite(8,HIGH); //led orange
       digitalWrite(7,LOW); // led rouge
 
     }
-    if(battval >99)
+    if(battval >99) // éteint le chargeur
     {
-      // delete the file, green led1
       digitalWrite(6,HIGH); // green led
       digitalWrite(8,LOW); // yellow led
     }
-    Serial.println(buttonbuffer);
+    //Serial.println(buttonbuffer);
 
     statebutton2 = digitalRead(2); // to exit the parking
     if(statebutton2 == HIGH)
@@ -93,39 +88,11 @@ void Board::loop(){
     statebutton3 = digitalRead(3); // to enter the garage
     if(statebutton3 == HIGH)
     {
-      digitalWrite(5,HIGH);
-      digitalWrite(7,HIGH);
+      digitalWrite(5,HIGH); //actPorte
+      digitalWrite(7,HIGH); // led rouge
     }
 
-
-    // if(ifstream("buttonexit"))
-    // {
-    //   remove("buttonexit");
-    // }
-
-
-
-    // if(cpt%5==0){
-    //     // tous les 5 fois on affiche sur l ecran la temperature
-    //   sprintf(buf,"%d",val);
-    //   sprintf(buff, "%d", l);
-    //   sprintf(irbuffer, "%d", irval);
-    //   bus.write(2,buff,100);
-    //   bus.write(1,buf,100);
-    //   bus.write(6,irbuffer,100);
-    // }
-    // cpt++;
-    sleep(1);
+    sleep(3);
   }
-//on eteint et on allume la LED
-  // if(bascule){
-  //   digitalWrite(0,HIGH);
-  //   digitalWrite(3,HIGH);
-  // }
-  // else {
-  //   digitalWrite(0,LOW);
-  //   digitalWrite(3,LOW);
-  // }
-  // bascule=1-bascule;
 
 }

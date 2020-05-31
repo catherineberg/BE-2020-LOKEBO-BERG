@@ -10,11 +10,11 @@
 #include "capteur.h"
 
 // Classe du capteur de présence devant la porte pour détecter une voiture
-class IRsensor: public Device
+class IRsensor: public Capteur
 {
 protected:
-  int temps;
-  int val;
+  //int temps;
+  //int val;
 public:
   // constructeur
   IRsensor(int v, int t);

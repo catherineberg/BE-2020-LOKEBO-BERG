@@ -8,9 +8,6 @@
 // class BoardException
 int BoardException::get(){return num;}
 
-//this is a test from Hermund
-//this is a test from Njord1
-
 string BoardException::text(){
   string s;
   switch(num){
